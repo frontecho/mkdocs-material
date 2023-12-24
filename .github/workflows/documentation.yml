@@ -19,10 +19,10 @@
 # IN THE SOFTWARE.
 
 name: documentation
-on:
-  push:
-    branches:
-      - master
+on: []
+  # push:
+  #   branches:
+  #     - master
 
 env:
   PYTHON_VERSION: 3.x
