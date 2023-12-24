@@ -19,7 +19,8 @@
 # IN THE SOFTWARE.
 
 name: documentation
-on: []
+on:
+  workflow_dispatch:
   # push:
   #   branches:
   #     - master
