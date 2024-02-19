@@ -2,6 +2,50 @@
 
 ## Material for MkDocs
 
+### 9.5.10 <small>February 19, 2024</small> { id="9.5.10" }
+
+- Updated Bahasa Malaysia translations
+- Fixed #6783: Hide continue reading link for blog posts without separators
+- Fixed #6779: Incorrect positioning of integrated table of contents
+
+### 9.5.9 <small>February 10, 2024</small> { id="9.5.9" }
+
+- Fixed navigation pruning with tabs and sections enabled
+
+### 9.5.8 <small>February 7, 2024</small> { id="9.5.8" }
+
+- Added Tamil translations
+- Updated Esperanto translations
+- Fixed relative images not being resolved for instant navigation
+
+### 9.5.7 <small>February 3, 2024</small> { id="9.5.7" }
+
+- Fixed #6731: Small images in figures are not centered
+- Fixed #6719: Instant navigation breaks table of contents (9.5.5 regression)
+
+### 9.5.6 <small>January 28, 2024</small> { id="9.5.6" }
+
+- Fixed #6700: Missing styles for Mermaid.js labels with Markdown
+
+### 9.5.5 <small>January 24, 2024</small> { id="9.5.5" }
+
+- Updated Tagalog translations
+- Updated Pillow to 10.2 to mitigate security vulnerabilities
+- Improved resilience of instant navigation
+- Fixed #6687: Updated Mermaid.js to version 10.7.0 (latest)
+- Fixed #6652: Keyboard events in custom elements captured
+- Fixed #6582: Instant navigation doesn't correctly handle alternate URLs
+- Fixed #6565: Instant navigation doesn't allow for `onclick` handlers
+- Fixed #6345: Instant navigation sometimes breaks browser back button
+- Fixed #6334: Instant navigation doesn't correctly position anchors (Safari)
+- Fixed #6275: Instant navigation doesn't correctly resolve after 404
+- Fixed #6102: Instant navigation reloads page on same link navigation
+
+### 9.5.4 <small>January 15, 2024</small> { id="9.5.4" }
+
+- Fixed #6645: Local storage with invalid value can break site
+- Fixed #6635: Tags icons before default ignored if default is set
+
 ### 9.5.3 <small>December 23, 2023</small> { id="9.5.3" }
 
 - Limited version range of MkDocs to < 1.6

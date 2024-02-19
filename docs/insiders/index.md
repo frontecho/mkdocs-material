@@ -88,11 +88,13 @@ a handful of them, [thanks to our awesome sponsors]!
 ## What's in it for me?
 
 The moment you [become a sponsor][how to become a sponsor], you'll get __immediate
-access to 23 additional features__ that you can __start using now__, and
+access to 25 additional features__ that you can __start using now__, and
 which are currently exclusively available to sponsors:
 
 <div class="mdx-columns" markdown>
 
+- [x] [Instant previews] :material-alert-decagram:{ .mdx-pulse title="Added on January 28, 2023" }
+- [x] [Footnote tooltips] :material-alert-decagram:{ .mdx-pulse title="Added on January 24, 2023" }
 - [x] [Tags plugin: advanced settings] :material-alert-decagram:{ .mdx-pulse title="Added on December 23, 2023" }
 - [x] [Tags plugin: nested tags] :material-alert-decagram:{ .mdx-pulse title="Added on December 23, 2023" }
 - [x] [Tags plugin: shadow tags] :material-alert-decagram:{ .mdx-pulse title="Added on December 23, 2023" }
@@ -105,7 +107,7 @@ which are currently exclusively available to sponsors:
 - [x] [Social plugin: background images]
 - [x] [Code range selection]
 - [x] [Code annotations: custom selectors]
-- [x] [Privacy plugin: optimization support]
+- [x] [Privacy plugin: advanced settings]
 - [x] [Optimize plugin]
 - [x] [Navigation path] (Breadcrumbs)
 - [x] [Typeset plugin]
@@ -167,6 +169,7 @@ You can cancel your sponsorship anytime.[^5]
 
 [![FastAPI]{ style="height: 120px" }](https://fastapi.tiangolo.com/){ target=_blank title="FastAPI" }
 [![Trendpop]{ style="height: 120px" }](https://www.trendpop.com/){ target=_blank title="Trendpop" }
+[![SailPoint]{ style="height: 120px" }](https://www.sailpoint.com/){ target=_blank title="SailPoint" }
 
 **Bronze sponsors**:
 
@@ -201,6 +204,9 @@ You can cancel your sponsorship anytime.[^5]
 [![Bühler Group]](https://www.buhlergroup.com/){ target=_blank title="Bühler Group" }
 [![Transformation Flow]](https://transformationflow.io/){ target=_blank title="Transformation Flow" }
 [![3DR]](https://3dr.com/){ target=_blank title="3DR" }
+[![Spotware]](https://spotware.com/){ target=_blank title="Spotware" }
+[![Milford Assets]](https://milfordasset.com/){ target=_blank title="Milford Assets" }
+[![Lechler]](https://www.lechler.com/){ target=_blank title="Lechler" }
 
 </div>
 
@@ -238,6 +244,10 @@ You can cancel your sponsorship anytime.[^5]
   [Bühler Group]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-buhler.png
   [Transformation Flow]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-transformationflow.png
   [3DR]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-3dr.png
+  [Spotware]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-spotware.png
+  [Milford Assets]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-milford.png
+  [Lechler]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-lechler.png
+  [SailPoint]: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-sailpoint.png
 
 <hr />
 
@@ -277,8 +287,8 @@ are released for general availability.
   [Blog plugin: related links]: ../setup/setting-up-a-blog.md#adding-related-links
   [Blog plugin: custom index pages]: ../setup/setting-up-a-blog.md#custom-index-pages
   [Tags plugin: configurable listings]: ../setup/setting-up-tags.md#configurable-listings
-  [Tags plugin: allow list]: ../setup/setting-up-tags.md#+tags.tags_allowed
-  [custom sorting]: ../setup/setting-up-tags.md#+tags.tags_compare
+  [Tags plugin: allow list]: ../plugins/tags.md#config.tags_allowed
+  [custom sorting]: ../plugins/tags.md#config.tags_sort_by
   [Navigation subtitles]: ../reference/index.md#setting-the-page-subtitle
 
 #### $ 20,000 – Jalapeño
@@ -286,23 +296,26 @@ are released for general availability.
 - [x] [Optimize plugin]
 - [x] [Typeset plugin]
 - [x] [Navigation path] (Breadcrumbs)
-- [x] [Privacy plugin: optimization support]
+- [x] [Privacy plugin: advanced settings]
 - [x] [Privacy plugin: external links]
 - [x] [Instant prefetching]
 - [x] [Blog plugin: advanced settings]
 - [x] [Blog plugin: author profiles]
+- [x] [Footnote tooltips]
 
   [Optimize plugin]: ../plugins/optimize.md
   [Typeset plugin]: ../plugins/typeset.md
-  [Privacy plugin: external links]: ../setup/ensuring-data-privacy.md#+privacy.links
-  [Privacy plugin: optimization support]: ../setup/ensuring-data-privacy.md#+privacy.assets_include
+  [Privacy plugin: external links]: ../plugins/privacy.md#external-links
+  [Privacy plugin: advanced settings]: ../setup/ensuring-data-privacy.md#advanced-settings
   [Navigation path]: ../setup/setting-up-navigation.md#navigation-path
   [Instant prefetching]: ../setup/setting-up-navigation.md#instant-prefetching
   [Blog plugin: advanced settings]: ../setup/setting-up-a-blog.md#advanced-settings
   [Blog plugin: author profiles]: ../setup/setting-up-a-blog.md#adding-author-profiles
+  [Footnote tooltips]: ../reference/footnotes.md#footnote-tooltips
 
 #### $ 24,000 – Blockpaprika
 
+- [x] [Instant previews]
 - [x] [Projects plugin]
 - [x] [Social plugin: custom layouts]
 - [x] [Social plugin: background images]
@@ -311,21 +324,19 @@ are released for general availability.
 - [x] [Stay on page when switching languages]
 - [x] [Tags plugin: nested tags]
 - [x] [Tags plugin: shadow tags]
+- [x] [Tags plugin: advanced settings]
 
+  [Instant previews]: ../setup/setting-up-navigation.md#instant-previews
   [Projects plugin]: ../plugins/projects.md
   [Social plugin: custom layouts]: ../setup/setting-up-social-cards.md#customization
-  [Social plugin: background images]: ../setup/setting-up-social-cards.md#+social.cards_layout_params.background_image
+  [Social plugin: background images]: ../plugins/social.md#option.background_image
   [Code range selection]: ../reference/code-blocks.md#code-selection-button
   [Code annotations: custom selectors]: ../reference/code-blocks.md#custom-selectors
   [Stay on page when switching languages]: ../setup/changing-the-language.md#stay-on-page
   [Tags plugin: nested tags]: ../setup/setting-up-tags.md#nested-tags
   [Tags plugin: shadow tags]: ../setup/setting-up-tags.md#shadow-tags
-
-#### $ 28,000 – Lemon Drop
-
-- [x] [Tags plugin: advanced settings]
-
   [Tags plugin: advanced settings]: ../setup/setting-up-tags.md#advanced-settings
+
 
 ### Goals completed
 

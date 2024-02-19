@@ -2,6 +2,29 @@
 
 ## Material for MkDocs Insiders
 
+### 4.52.2 <small>February 7, 2024</small> { id="4.52.2" }
+
+- Fixed #6735: Instant previews misplaced when below tabs
+
+### 4.52.1 <small>January 30, 2024</small> { id="4.52.1" }
+
+- Fixed #6705: Navigation path not being hidden when specified
+- Fixed #6703: New tags plugin crashes on Windows (2nd attempt)
+
+### 4.52.0 <small>January 28, 2024</small> { id="4.52.0" }
+
+- Added support for instant previews
+- Fixed footnote tooltips positioning edge cases
+- Fixed #6703: New tags plugin crashes on Windows
+
+### 4.51.0 <small>January 24, 2024</small> { id="4.51.0" }
+
+- Added support for footnote tooltips
+
+### 4.50.0 <small>January 19, 2024</small> { id="4.50.0" }
+
+- Added configurable logging capabilities to privacy plugin
+
 ### 4.49.2 <small>January 9, 2024</small> { id="4.49.2" }
 
 - Fixed missing attribute lists extension for tags plugin

@@ -31,9 +31,19 @@ are rebound automatically, i.e., __Material for MkDocs now behaves like a Single
 Page Application__. Now, the search index survives navigation, which is
 especially useful for large documentation sites.
 
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
+
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant
+    navigation, as instant navigation relies on the generated `sitemap.xml`
+    which will be empty if this setting is omitted. Example:
+
+    ``` yaml
+    site_url: https://example.com
+    ```
+
   [XHR]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 
-#### Instant prefetching :material-alert-decagram:{ .mdx-pulse title="Added on June 15, 2023" }
+#### Instant prefetching
 
 <!-- md:sponsors -->
 <!-- md:version insiders-4.36.0 -->
@@ -73,6 +83,50 @@ theme:
 The progress indicator will only show if the page hasn't finished loading after
 400ms, so that fast connections will never show it for a better instant
 experience.
+
+### Instant previews :material-alert-decagram:{ .mdx-pulse title="Added on January 28, 2024" }
+
+<!-- md:sponsors -->
+<!-- md:version insiders-4.52.0 -->
+<!-- md:feature -->
+<!-- md:flag experimental -->
+
+Instant previews are a brand new feature that allow the user to preview another
+site of your documentation without navigating to it. They can be very helpful to
+keep the user in context. A link can be opted into instant previews with the
+`data-preview` attribute:
+
+```` markdown title="Link with instant preview"
+``` markdown
+[Attribute Lists](#){ data-preview }
+```
+````
+
+<div class="result" markdown>
+
+[Attribute Lists](extensions/python-markdown.md#attribute-lists){ data-preview }
+
+</div>
+
+Instant previews can also be enabled globally by adding the following lines to
+`mkdocs.yml`, which will enable instant previews for all internal links,
+alleviating the need to add data attributes:
+
+``` yaml
+theme:
+  features:
+    - navigation.instant.preview
+```
+
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
+
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant
+    previews, as instant previews rely on the generated `sitemap.xml`
+    which will be empty if this setting is omitted. Example:
+
+    ``` yaml
+    site_url: https://example.com
+    ```
 
 ### Anchor tracking
 

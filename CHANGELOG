@@ -1,3 +1,70 @@
+mkdocs-material-9.5.10 (2024-02-19)
+
+  * Updated Bahasa Malaysia translations
+  * Fixed #6783: Hide continue reading link for blog posts without separators
+  * Fixed #6779: Incorrect positioning of integrated table of contents
+
+mkdocs-material-9.5.9 (2024-02-10)
+
+  * Fixed navigation pruning with tabs and sections enabled
+
+mkdocs-material-9.5.8+insiders-4.52.2 (2024-02-07)
+
+  * Fixed #6735: Instant previews misplaced when below tabs
+
+mkdocs-material-9.5.8 (2024-02-07)
+
+  * Added Tamil translations
+  * Updated Esperanto translations
+  * Fixed relative images not being resolved for instant navigation
+
+mkdocs-material-9.5.7 (2024-02-03)
+
+  * Fixed #6731: Small images in figures are not centered
+  * Fixed #6719: Instant navigation breaks table of contents (9.5.5 regression)
+
+mkdocs-material-9.5.6+insiders-4.52.1 (2024-01-30)
+
+  * Fixed #6705: Navigation path not being hidden when specified
+  * Fixed #6703: New tags plugin crashes on Windows (2nd attempt)
+
+mkdocs-material-9.5.6+insiders-4.52.0 (2024-01-28)
+
+  * Added support for instant previews
+  * Fixed footnote tooltips positioning edge cases
+  * Fixed #6703: New tags plugin crashes on Windows
+
+mkdocs-material-9.5.6 (2024-01-28)
+
+  * Fixed #6700: Missing styles for Mermaid.js labels with Markdown
+
+mkdocs-material-9.5.5+insiders-4.51.0 (2024-01-24)
+
+  * Added support for footnote tooltips
+
+mkdocs-material-9.5.5 (2024-01-24)
+
+  * Updated Tagalog translations
+  * Updated Pillow to 10.2 to mitigate security vulnerabilities
+  * Improved resilience of instant navigation
+  * Fixed #6687: Updated Mermaid.js to version 10.7.0 (latest)
+  * Fixed #6652: Keyboard events in custom elements captured
+  * Fixed #6582: Instant navigation doesn't correctly handle alternate URLs
+  * Fixed #6565: Instant navigation doesn't allow for onclick handlers
+  * Fixed #6345: Instant navigation sometimes breaks browser back button
+  * Fixed #6334: Instant navigation doesn't correctly position anchors (Safari)
+  * Fixed #6275: Instant navigation doesn't correctly resolve after 404
+  * Fixed #6102: Instant navigation reloads page on same link navigation
+
+mkdocs-material-9.5.4+insiders-4.50.0 (2024-01-19)
+
+  * Added configurable logging capabilities to privacy plugin
+
+mkdocs-material-9.5.4 (2024-01-15)
+
+  * Fixed #6645: Local storage with invalid value can break site
+  * Fixed #6635: Tags icons before default ignored if default is set
+
 mkdocs-material-9.5.3+insiders-4.49.2 (2024-01-09)
 
   * Fixed missing attribute lists extension for tags plugin
