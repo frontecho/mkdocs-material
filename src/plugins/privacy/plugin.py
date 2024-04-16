@@ -33,11 +33,12 @@ from concurrent.futures import Future, ThreadPoolExecutor, wait
 from hashlib import sha1
 from mkdocs.config.config_options import ExtraScriptValue
 from mkdocs.config.defaults import MkDocsConfig
+from mkdocs.exceptions import PluginError
 from mkdocs.plugins import BasePlugin, event_priority
 from mkdocs.structure.files import File, Files
 from mkdocs.utils import is_error_template
 from re import Match
-from urllib.parse import ParseResult as URL, urlparse
+from urllib.parse import ParseResult as URL, urlparse, unquote
 from xml.etree.ElementTree import Element, tostring
 
 from .config import PrivacyConfig
@@ -241,9 +242,18 @@ class PrivacyPlugin(BasePlugin[PrivacyConfig]):
         parser.feed(fragment)
         parser.close()
 
-        # Return element
-        assert isinstance(parser.result, Element)
-        return parser.result
+        # Check parse result and return element
+        if isinstance(parser.result, Element):
+            return parser.result
+
+        # Otherwise, raise a plugin error - if the author accidentally used
+        # invalid HTML inside of the tag, e.g., forget a opening or closing
+        # quote, we need to catch this here, as we're using pretty basic
+        # regular expression based extraction
+        raise PluginError(
+            f"Could not parse due to possible syntax error in HTML: \n\n"
+            + fragment
+        )
 
     # Parse and extract all external assets from a media file using a preset
     # regular expression, and return all URLs found.
@@ -254,7 +264,7 @@ class PrivacyPlugin(BasePlugin[PrivacyConfig]):
 
         # Find and extract all external asset URLs
         expr = re.compile(self.assets_expr_map[extension], flags = re.I | re.M)
-        with open(initiator.abs_src_path, encoding = "utf-8") as f:
+        with open(initiator.abs_src_path, encoding = "utf-8-sig") as f:
             return [urlparse(url) for url in re.findall(expr, f.read())]
 
     # Parse template or page HTML and find all external links that need to be
@@ -437,7 +447,7 @@ class PrivacyPlugin(BasePlugin[PrivacyConfig]):
 
     # Patch all links to external assets in the given file
     def _patch(self, initiator: File):
-        with open(initiator.abs_src_path, encoding = "utf-8") as f:
+        with open(initiator.abs_src_path, encoding = "utf-8-sig") as f:
 
             # Replace callback
             def replace(match: Match):
@@ -515,7 +525,7 @@ class PrivacyPlugin(BasePlugin[PrivacyConfig]):
     # Create a file for the given path
     def _path_to_file(self, path: str, config: MkDocsConfig):
         return File(
-            posixpath.join(self.config.assets_fetch_dir, path),
+            posixpath.join(self.config.assets_fetch_dir, unquote(path)),
             os.path.abspath(self.config.cache_dir),
             config.site_dir,
             False

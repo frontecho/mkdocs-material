@@ -1256,7 +1256,7 @@ plugins:
 #### <!-- md:setting config.pagination_url_format -->
 
 <!-- md:version 9.2.0 -->
-<!-- md:default `{date}/{slug}` -->
+<!-- md:default `page/{page}` -->
 
 Use this setting to change the format string that is used when generating
 paginated view URLs. You can freely combine placeholders, and join them with
@@ -1577,6 +1577,29 @@ exclude posts marked as drafts when [building your project] using the
 ``` yaml
 ---
 draft: true
+---
+
+# Post title
+...
+```
+
+---
+
+#### <!-- md:setting meta.pin -->
+
+<!-- md:sponsors -->
+<!-- md:version insiders-4.53.0 -->
+<!-- md:flag metadata -->
+<!-- md:default `false` -->
+<!-- md:flag experimental -->
+
+Use this property to pin a post to the top of a view. In case multiple posts are
+pinned, the pinned posts are sorted by descending order and appear before all
+other posts. Pin a post with:
+
+``` yaml
+---
+pin: true
 ---
 
 # Post title

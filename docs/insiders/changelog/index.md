@@ -2,6 +2,48 @@
 
 ## Material for MkDocs Insiders
 
+### 4.53.6 <small>April 5, 2024</small> { id="4.53.6" }
+
+- Ensure working directory is set for projects when using projects plugin
+- Fixed #6970: Incorrect relative paths in git submodules with projects plugin
+
+### 4.53.5 <small>April 2, 2024</small> { id="4.53.5" }
+
+- Fixed social plugin crashing when no colors are specified in palettes
+
+### 4.53.4 <small>March 31, 2024</small> { id="4.53.4" }
+
+- Fixed #6973: Escaping issue in tags extra files deprecation helper
+
+### 4.53.3 <small>March 23, 2024</small> { id="4.53.3" }
+
+- Added support for font variants in social plugin
+- Improved resilience of font resolution in social plugin
+- Fixed tag listing sometimes not being auto-populated
+- Fixed tag listing scope not being correctly resolved
+- Fixed #6941: Meta plugin adding duplicate entries
+- Fixed #6928: Social plugin crashes for some fonts
+
+### 4.53.2 <small>March 18, 2024</small> { id="4.53.2" }
+
+- Fixed abort on first non-matching configuration in preview extension
+- Fixed #6914: Meta files take precedence over front matter
+
+### 4.53.1 <small>March 6, 2024</small> { id="4.53.1" }
+
+- Fixed #6877: Projects plugin computes incorrect path to assets
+- Fixed #6869: Blog plugin should emit warning on invalid related link
+
+### 4.53.0 <small>February 24, 2024</small> { id="4.53.0" }
+
+- Added support for automatic instant previews
+- Added support for pinned blog posts
+
+### 4.52.3 <small>February 21, 2024</small> { id="4.52.3" }
+
+- Fixed resolution of URLs in instant previews
+- Fixed instant previews not mounting for same-page links
+
 ### 4.52.2 <small>February 7, 2024</small> { id="4.52.2" }
 
 - Fixed #6735: Instant previews misplaced when below tabs

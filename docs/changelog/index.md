@@ -2,6 +2,64 @@
 
 ## Material for MkDocs
 
+### 9.5.18 <small>April 16, 2024</small> { id="9.5.18" }
+
+- Refactored tooltips implementation to fix positioning issues
+- Fixed #7044: Rendering glitch when hovering contributor avatar in Chrome
+- Fixed #7043: Highlighted lines in code blocks cutoff on mobile
+- Fixed #6910: Incorrect position of tooltip for page status in sidebar
+- Fixed #6760: Incorrect position and overly long tooltip in tables
+- Fixed #6488: Incorrect position and cutoff tooltip in content tabs
+
+### 9.5.17 <small>April 2, 2024</small> { id="9.5.17" }
+
+- Updated Serbian translations
+- Fixed #7003: Confusing keyboard interaction for palette toggle
+- Fixed #7001: Blog posts now show time by default (9.5.16 regression)
+- Fixed edge case in backport of social plugin font loading logic
+
+### 9.5.16 <small>March 31, 2024</small> { id="9.5.16" }
+
+- Updated Russian translations
+- Improved error handling and reporting in social plugin
+- Improved error handling and reporting in privacy plugin
+- Fixed blog plugin not allowing to use time in format strings
+- Fixed #6983: Social plugin crashes because of Google Fonts API change
+
+### 9.5.15 <small>March 23, 2024</small> { id="9.5.15" }
+
+- Reverted fix for transparent iframes (9.5.14)
+- Fixed #6929: Interference of social plugin and auto dark mode
+- Fixed #6938: Giscus shows dark background in light mode (9.5.14 regression)
+
+### 9.5.14 <small>March 18, 2024</small> { id="9.5.14" }
+
+- Added support for hiding versions from selector when using mike
+- Added init system to improve signal handling in Docker image
+- Fixed edge cases in exclusion logic of info plugin
+- Fixed inability to reset pipeline in search plugin
+- Fixed syntax error in Finnish translations
+- Fixed #6917: UTF-8 encoding problems in blog plugin on Windows
+- Fixed #6889: Transparent iframes get background color
+
+### 9.5.13 <small>March 6, 2024</small> { id="9.5.13" }
+
+- Updated Slovak translations
+- Improved info plugin interop with projects plugin
+- Improved info plugin inclusion/exclusion logic
+- Fixed info plugin not gathering files recursively
+- Fixed #6750: Ensure info plugin packs up all necessary files
+
+### 9.5.12 <small>February 29, 2024</small> { id="9.5.12" }
+
+- Fixed #6846: Some meta tags removed on instant navigation (9.4.2 regression)
+- Fixed #6823: KaTex not rendering on instant navigation (9.5.5 regression)
+- Fixed #6821: Privacy plugin doesn't handle URLs with encoded characters
+
+### 9.5.11 <small>February 24, 2024</small> { id="9.5.11" }
+
+- Updated Finnish translation
+
 ### 9.5.10 <small>February 19, 2024</small> { id="9.5.10" }
 
 - Updated Bahasa Malaysia translations
@@ -956,7 +1014,7 @@ __Fixes__
 - Removed deprecated prebuilt search index support
 - Removed deprecated web app manifest – use customization
 - Removed `extracopyright` variable – use new `copyright` partial
-- Removed Disqus integation – use customization
+- Removed Disqus integration – use customization
 - Switched to `:is()` selectors for simple selector lists
 - Switched autoprefixer from `last 4 years` to `last 2 years`
 - Improved CSS overall to match modern standards
