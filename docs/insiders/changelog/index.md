@@ -2,6 +2,32 @@
 
 ## Material for MkDocs Insiders
 
+### 4.53.14 <small>September 29, 2024</small> { id="4.53.14" }
+
+- Fixed #7567: Empty headlines when using typeset plugin with anchorlinks
+
+### 4.53.13 <small>September 14, 2024</small> { id="4.53.13" }
+
+- Fixed #7520: Social plugin errors for generated files (MkDocs 1.6+)
+
+### 4.53.12 <small>August 2, 2024</small> { id="4.53.12" }
+
+- Fixed #7410: Instant previews jump on content tabs with anchor links
+- Fixed #7408: Instant previews jump on content tabs
+
+### 4.53.11 <small>May 27, 2024</small> { id="4.53.11" }
+
+- Fixed projects plugin crashing when serving before building subprojects
+
+### 4.53.10 <small>May 20, 2024</small> { id="4.53.10" }
+
+- Fixed projects plugin crashing in serve mode when disabled
+- Fixed projects plugin crashing when building nested projects
+
+### 4.53.9 <small>May 20, 2024</small> { id="4.53.9" }
+
+- Fixed #7191: Tags listings not rendering when `toc_depth` is changed
+
 ### 4.53.8 <small>April 26, 2024</small> { id="4.53.8" }
 
 - Fixed #7052: Preview extension automatically including all pages

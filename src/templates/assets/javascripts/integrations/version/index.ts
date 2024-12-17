@@ -48,6 +48,8 @@ import {
 
 import { fetchSitemap } from "../sitemap"
 
+import { selectedVersionCorrespondingURL } from "./findurl"
+
 /* ----------------------------------------------------------------------------
  * Helper types
  * ------------------------------------------------------------------------- */
@@ -122,23 +124,23 @@ export function setupVersionSelector(
                     return EMPTY
                 }
                 ev.preventDefault()
-                return of(url)
+                return of(new URL(url))
               }
             }
             return EMPTY
           }),
-          switchMap(url => {
-            const { version } = urls.get(url)!
-            return fetchSitemap(new URL(url))
-              .pipe(
-                map(sitemap => {
-                  const location = getLocation()
-                  const path = location.href.replace(config.base, "")
-                  return sitemap.has(path.split("#")[0])
-                    ? new URL(`../${version}/${path}`, config.base)
-                    : new URL(url)
-                })
-              )
+          switchMap(selectedVersionBaseURL => {
+            return fetchSitemap(selectedVersionBaseURL).pipe(
+              map(
+                sitemap =>
+                  selectedVersionCorrespondingURL({
+                    selectedVersionSitemap: sitemap,
+                    selectedVersionBaseURL,
+                    currentLocation: getLocation(),
+                    currentBaseURL: config.base
+                  }) ?? selectedVersionBaseURL,
+              ),
+            )
           })
         )
       )

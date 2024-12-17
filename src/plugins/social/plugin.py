@@ -42,13 +42,13 @@ import sys
 
 from collections import defaultdict
 from hashlib import md5
+from html import unescape
 from io import BytesIO
 from mkdocs.commands.build import DuplicateFilter
 from mkdocs.exceptions import PluginError
 from mkdocs.plugins import BasePlugin
-from mkdocs.utils import copy_file
+from mkdocs.utils import write_file
 from shutil import copyfile
-from tempfile import NamedTemporaryFile
 
 from .config import SocialConfig
 
@@ -82,7 +82,8 @@ class SocialPlugin(BasePlugin[SocialConfig]):
     # Retrieve configuration
     def on_config(self, config):
         self.color = colors.get("indigo")
-        self.config.cards = self.config.enabled
+        if not self.config.enabled:
+            self.config.cards = False
         if not self.config.cards:
             return
 
@@ -298,8 +299,9 @@ class SocialPlugin(BasePlugin[SocialConfig]):
         width = size[0]
         lines, words = [], []
 
-        # Remove remnant HTML tags
+        # Remove remnant HTML tags and convert HTML entities
         text = re.sub(r"(<[^>]+>)", "", text)
+        text = unescape(text)
 
         # Retrieve y-offset of textbox to correct for spacing
         yoffset = 0
@@ -338,9 +340,11 @@ class SocialPlugin(BasePlugin[SocialConfig]):
         file, _ = os.path.splitext(page.file.src_uri)
 
         # Compute page title
-        title = page.meta.get("title", page.title)
-        if not page.is_homepage:
-            title = f"{title} - {config.site_name}"
+        if page.is_homepage:
+            title = config.site_name
+        else:
+            page_title = page.meta.get("title", page.title)
+            title = f"{page_title} - {config.site_name}"
 
         # Compute page description
         description = config.site_description
@@ -444,11 +448,17 @@ class SocialPlugin(BasePlugin[SocialConfig]):
         svg2png(bytestring = data, write_to = file, scale = 10)
         return Image.open(file)
 
-    # Retrieve font
+    # Retrieve font either from the card layout option or from the Material
+    # font defintion. If no font is defined for Material or font is False
+    # then choose a default.
     def _load_font(self, config):
         name = self.config.cards_layout_options.get("font_family")
         if not name:
-            name = config.theme.get("font", {}).get("text", "Roboto")
+            material_name = config.theme.get("font", False)
+            if material_name is False:
+                name = "Roboto"
+            else:
+                name = material_name.get("text", "Roboto")
 
         # Resolve relevant fonts
         font = {}
@@ -522,19 +532,18 @@ class SocialPlugin(BasePlugin[SocialConfig]):
             with requests.get(match) as res:
                 res.raise_for_status()
 
-                # Create a temporary file to download the font
-                with NamedTemporaryFile() as temp:
-                    temp.write(res.content)
-                    temp.flush()
-
-                    # Extract font family name and style
-                    font = ImageFont.truetype(temp.name)
+                # Extract font family name and style using the content in the
+                # response via ByteIO to avoid writing a temp file. Done to fix
+                # problems with passing a NamedTemporaryFile to
+                # ImageFont.truetype() on Windows, see https://t.ly/LiF_k
+                with BytesIO(res.content) as fontdata:
+                    font = ImageFont.truetype(fontdata)
                     name, style = font.getname()
                     name = " ".join([name.replace(family, ""), style]).strip()
-
-                    # Move fonts to cache directory
                     target = os.path.join(path, family, f"{name}.ttf")
-                    copy_file(temp.name, target)
+
+                # write file to cache
+                write_file(res.content, target)
 
 # -----------------------------------------------------------------------------
 # Data

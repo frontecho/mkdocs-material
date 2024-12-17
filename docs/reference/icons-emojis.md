@@ -21,6 +21,14 @@ can be added] and used in `mkdocs.yml`, documents and templates.
     data-mdx-component="iconsearch-query"
   />
   <div class="mdx-iconsearch-result" data-mdx-component="iconsearch-result">
+    <select
+      class="mdx-iconsearch-result__select"
+      data-mdx-component="iconsearch-select"
+    >
+      <option value="all" selected>All</option>
+      <option value="icons">Icons</option>
+      <option value="emojis">Emojis</option>
+    </select>
     <div class="mdx-iconsearch-result__meta"></div>
     <ol class="mdx-iconsearch-result__list"></ol>
   </div>
@@ -58,7 +66,7 @@ See additional configuration options:
 - [Emoji]
 - [Emoji with custom icons]
 
-  [Material Design]: https://materialdesignicons.com/
+  [Material Design]: https://pictogrammers.com/library/mdi/
   [FontAwesome]: https://fontawesome.com/search?m=free
   [Octicons]: https://octicons.github.com/
   [Simple Icons]: https://simpleicons.org/

@@ -89,7 +89,7 @@ async function setupSearchLanguages(
 
   /* Detect `iframe-worker` and fix base URL */
   if (typeof parent !== "undefined" && "IFrameWorker" in parent) {
-    const worker = getElement<HTMLScriptElement>("script[src]")!
+    const worker = getElement<HTMLScriptElement>("script[src]")
     const [path] = worker.src.split("/worker")
 
     /* Prefix base with path */
@@ -185,6 +185,9 @@ export async function handler(
 
 /* Expose Lunr.js in global scope, or stemmers won't work */
 self.lunr = lunr
+
+/* Monkey-patch Lunr.js to mitigate https://t.ly/68TLq */
+lunr.utils.warn = console.warn
 
 /* Handle messages */
 addEventListener("message", async ev => {
