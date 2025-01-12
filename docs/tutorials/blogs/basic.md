@@ -240,7 +240,7 @@ attribute in the page header:
 
     Add the `pin` attribute to your first blog post:
 
-    ```hl_lines="5"
+    ```hl_lines="6"
     ---
     date:
       created: 2023-12-31
@@ -351,7 +351,9 @@ output to the files to figure out which posts are drafts.)
         ```
 
     === "Windows"
-        TODO
+        ```powershell
+        $ mkdir docs\blog\posts\drafts
+        ```
 
     Now, within this folder, crate a file `.meta.yml` that contains:
 

@@ -74,6 +74,9 @@
   <a href="https://opensource.siemens.com/" target=_blank><img
     src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-siemens.png" height="120"
   /></a>
+  <a href="https://pydantic.dev/logfire/" target=_blank><img
+    src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-logfire.png" height="120"
+  /></a>
 </p>
 <p>&nbsp;</p>
 <p align="center"><strong>Bronze sponsors</strong></p>
@@ -192,6 +195,9 @@
   <a href="https://hummingbot.org/" target=_blank><img
     src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-hummingbot.png" height="58"
   /></a>
+  <a href="https://octoperf.com/" target=_blank><img
+    src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-octoperf.png" height="58"
+  /></a>
 </p>
 <p>&nbsp;</p>
 
@@ -221,17 +227,17 @@ Don't let your users wait – get incredible value with a small footprint by usi
 one of the fastest themes available with excellent performance, yielding optimal
 search engine rankings and happy users that return.
 
-### Built for everyone
+### Maintain ownership
 
-Make accessibility a priority – users can navigate your documentation with touch
-devices, keyboards, and screen readers. Semantic markup ensures that your
-documentation works for everyone.
+Own your documentation's complete sources and outputs, guaranteeing both
+integrity and security – no need to entrust the backbone of your product
+knowledge to third-party platforms. Retain full control.
 
 ### Open Source
 
-Trust 20,000+ users – choose a mature and actively maintained solution built
-with state-of-the-art Open Source technologies. Keep ownership of your content
-without fear of vendor lock-in. Licensed under MIT.
+You're in good company – choose a mature and actively maintained solution built
+with state-of-the-art Open Source technologies, trusted by more than 50.000
+individuals and organizations. Licensed under MIT.
 
 ## Quick start
 
@@ -329,7 +335,7 @@ For detailed installation instructions, configuration options, and a demo, visit
 
 **MIT License**
 
-Copyright (c) 2016-2024 Martin Donath
+Copyright (c) 2016-2025 Martin Donath
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

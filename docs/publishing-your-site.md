@@ -205,7 +205,23 @@ Now, when a new commit is pushed to the [default branch] (typically `master` or
 `main`), the static site is automatically built and deployed. Commit and push
 the file to your repository to see the workflow in action.
 
-Your documentation should shortly appear at `<username>.gitlab.io/<repository>`.
+Your documentation is not published under `<username>.gitlab.io/<repository>`
+by default since **GitLab 17.4** [^1]. However, if you prefer a cleaner URL 
+structure, such as `<username>.gitlab.io/<repository>`, you need to adjust
+your configuration.
+
+To switch from a unique domain to the traditional URL structure, follow
+these steps:
+
+1.  Locate Your Repository
+2.  Go to **Settings › Pages** in the repository menu.
+3.  In the **Unique domain settings** section, **uncheck** the box labeled
+4.  **Use unique domain**.
+5.  Click **Save changes** to apply the update.
+
+Now you can reach your documentation under `<username>.gitlab.io/<repository>`. 
+
+[^1]: [Release notes for Gitlab 17.4](https://about.gitlab.com/releases/2024/09/19/gitlab-17-4-released/)
 
 ## Other
 
@@ -215,13 +231,11 @@ other providers:
 
 <div class="mdx-columns" markdown>
 
-- [:material-microsoft-azure-devops: Azure][Azure]
 - [:simple-cloudflarepages: Cloudflare Pages][Cloudflare Pages]
 - [:simple-digitalocean: DigitalOcean][DigitalOcean]
 - [:material-airballoon-outline: Fly.io][Flyio]
 - [:simple-netlify: Netlify][Netlify]
 - [:simple-vercel: Vercel][Vercel]
-- [:simple-codeberg: Codeberg Pages][Codeberg Pages]
 - [:simple-scaleway: Scaleway][Scaleway]
 
 </div>
@@ -230,12 +244,10 @@ other providers:
   [GitLab CI]: https://docs.gitlab.com/ee/ci/
   [masked custom variables]: https://docs.gitlab.com/ee/ci/variables/#mask-a-cicd-variable
   [default branch]: https://docs.gitlab.com/ee/user/project/repository/branches/default.html
-  [Azure]: https://bawmedical.co.uk/t/publishing-a-material-for-mkdocs-site-to-azure-with-automatic-branch-pr-preview-deployments/763
-  [Cloudflare Pages]: https://deborahwrites.com/guides/deploy-mkdocs-material-cloudflare/
-  [DigitalOcean]: https://deborahwrites.com/guides/deploy-mkdocs-material-digitalocean-app-platform/
+  [Cloudflare Pages]: https://deborahwrites.com/guides/deploy-host-mkdocs/deploy-mkdocs-material-cloudflare/
+  [DigitalOcean]: https://deborahwrites.com/guides/deploy-host-mkdocs/deploy-mkdocs-material-digitalocean-app-platform/
   [Flyio]: https://documentation.breadnet.co.uk/cloud/fly/mkdocs-on-fly/
-  [Netlify]: https://deborahwrites.com/projects/deploy-host-docs/deploy-mkdocs-material-netlify/
-  [Vercel]: https://deborahwrites.com/guides/deploy-mkdocs-material-vercel/
-  [Codeberg Pages]: https://andre601.ch/blog/2023/11-05-using-codeberg-pages/
+  [Netlify]: https://deborahwrites.com/guides/deploy-host-mkdocs/deploy-mkdocs-material-netlify/
+  [Vercel]: https://deborahwrites.com/guides/deploy-host-mkdocs/deploy-mkdocs-material-vercel/
   [Scaleway]: https://www.scaleway.com/en/docs/tutorials/using-bucket-website-with-mkdocs/
 
